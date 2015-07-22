@@ -1,0 +1,276 @@
+body {
+	margin: auto;
+}
+
+
+#infoBox{
+	position: absolute;
+	left: 30px;
+	top: 30px;
+	width: 500px;
+}
+
+#image {
+	text-align: center;
+	margin: auto;
+}
+
+#name {
+	font-weight: bold;
+}
+
+#name a{
+	text-decoration: none;
+	color: #000;
+	display: inline-block;
+}
+
+#buttons {
+	width: 100%;
+	height: 30px;
+}
+
+#description, #name, #ownership {
+	padding: 10px 20px;
+}
+
+#description, #name, #ownership, #buttons, #help {
+	background: #aae7fb;
+}
+
+.linkContainer a{
+	-webkit-border-radius: 1;
+	-moz-border-radius: 1;
+	border-radius: 1px;
+	text-decoration: none;
+	color: #000;
+	background-color: #5accf3;
+	padding: 10px;
+}
+
+.linkContainer {
+	padding: 10px 7px;
+	background: #aae7fb;
+	float: left;
+	margin-bottom: 10px;
+}
+
+#description {
+	max-height: 10em;
+	overflow: auto;
+	background: #c6eefd;
+}
+
+#sendTroops {
+	margin-top: 10px;
+	text-align: center;
+}
+
+#links{
+	display: inline;
+	width: 500px;
+}
+
+input#sector {
+	display: inline;
+	border-radius: 1px;
+	border: 10px solid #5accf3;
+	width: 40px;
+}
+
+#links a {
+  -webkit-border-radius: 1;
+  -moz-border-radius: 1;
+  border-radius: 1px;
+  color: black;
+  background: #5accf3;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+#links a:hover, .linkContainer a:hover {
+	background: #23bdf2;
+	transition: 0.3s background;
+}
+
+#layer2 path:hover {
+	stroke-width: 3;
+	transition: 0.3s stroke-width;
+	cursor: pointer;
+}
+
+#customizer {
+	position: absolute;
+	top: 30px;
+	left: 550px;
+	
+}
+
+#size {
+	width: 70px;
+}
+
+#color {
+	width: 70px;
+}
+
+#customizer a{
+	text-decoration: none;
+	color: #000;
+	-webkit-border-radius: 1;
+	-moz-border-radius: 1;
+	border-radius: 1px;
+	background-color: #5accf3;
+	padding: 10px;
+	margin-top: 10px;
+	float: left;
+	width: 130px;
+	text-align: center;
+}
+
+#customizer a:hover{
+	background: #23bdf2;
+	transition: 0.3s all;
+}
+
+h1 {
+	text-align: center;
+}
+
+#footer {
+	margin-left: 20px;
+	color: #7a7a7a;
+	font-size: 10px;
+}
+
+#footer a{
+	color: #7a7a7a;
+}
+
+#help {
+	position: absolute;
+	left: 20%;
+	right: 20%;
+	top: -5000%;
+	padding: 30px;
+	border: 20px solid #c6eefd;
+	cursor: pointer;
+}
+
+.floatRight {
+	float: right;
+}
+
+.periwinkle {
+	fill: #907aff;
+	stroke-width: 1;
+	stroke: #000000;
+	color: #907aff;
+}
+
+.orangered {
+	fill: #ff6900;
+	stroke-width: 1;
+	stroke: #000000;
+	color: #ff6900;
+}
+
+.neutral {
+	fill: #787878;
+	stroke-width: 1;
+	stroke: #000000;
+	color: #787878;
+}
+
+@keyframes conflictNeutral {
+    from {fill: #ff4639; color: #ff4639;}
+    to {fill: #787878; color: #787878;}
+}
+
+@keyframes conflictPeriwinkle {
+    from {fill: #ff4639;}
+    to {fill: #907aff;}
+}
+
+@keyframes conflictOrangered {
+    from {fill: #ff4639;}
+    to {fill: #ff6900;}
+}
+
+.disputedNeutral{
+	fill: #ff4639;
+	stroke-width: 1;
+	stroke: #000000;
+	animation-name: conflictNeutral;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+	animation-timing-function: ease-in;
+	color: #ff4639;
+}
+
+.disputedPeriwinkle{
+	fill: #ff4639;
+	stroke-width: 1;
+	stroke: #000000;
+	animation-name: conflictPeriwinkle;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+	animation-timing-function: ease-in;
+}
+
+.disputedOrangered{
+	fill: #ff4639;
+	stroke-width: 1;
+	stroke: #000000;
+	animation-name: conflictOrangered;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+	animation-timing-function: ease-in;
+}
+
+.hidden {
+	display: none;
+}
+
+.hintText {
+	color: #7a7a7a;
+}
+
+.active {
+	stroke-width: 3;
+	stroke: #000000;
+}
+
+.italic {
+	font-style: italic;
+}
+
+p {
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.capitals {
+	text-transform: capitalize;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.s5 {
+	fill: #000;
+	font-family: TrebuchetMS;
+	font-size:12px;
+	line-height:100;
+	pointer-events: none;
+}
+
+.s0{fill:#000;stroke-width:0.34;stroke:#000;}
+.s1{fill:#907aff;stroke-width:1;stroke:#000;}
+.s2{fill:#787878;stroke-width:1;stroke:#000;}
+.s3{fill:#fc6b03;stroke-width:1;stroke:#000;}
+.s4{fill:none;stroke-width:5;stroke:#000;}
