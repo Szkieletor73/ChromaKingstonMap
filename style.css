@@ -161,26 +161,7 @@ h1 {
 	float: right;
 }
 
-.periwinkle {
-	fill: #907aff;
-	stroke-width: 1;
-	stroke: #000000;
-	color: #907aff;
-}
 
-.orangered {
-	fill: #ff6900;
-	stroke-width: 1;
-	stroke: #000000;
-	color: #ff6900;
-}
-
-.neutral {
-	fill: #787878;
-	stroke-width: 1;
-	stroke: #000000;
-	color: #787878;
-}
 
 @keyframes conflictNeutral {
     from {fill: #ff4639; color: #ff4639;}
@@ -260,17 +241,35 @@ p {
 .bold {
 	font-weight: bold;
 }
+.s0{fill:#000;stroke-width:0.34;stroke:#000;}
 
-.s5 {
+.s1 { /*periwinkle*/
+	fill: #907aff;
+	stroke-width: 1;
+	stroke: #000000;
+	color: #907aff;
+}
+
+.s2 { /*neutral*/
+	fill: #787878;
+	stroke-width: 1;
+	stroke: #000000;
+	color: #787878;
+}
+
+.s3 { /*orangered*/
+	fill: #ff6900;
+	stroke-width: 1;
+	stroke: #000000;
+	color: #ff6900;
+}
+
+.s4{fill:none;stroke-width:5;stroke:#000;} /*connections*/
+
+.s5 { /*land text*/
 	fill: #000;
 	font-family: TrebuchetMS;
 	font-size:12px;
 	line-height:100;
 	pointer-events: none;
 }
-
-.s0{fill:#000;stroke-width:0.34;stroke:#000;}
-.s1{fill:#907aff;stroke-width:1;stroke:#000;}
-.s2{fill:#787878;stroke-width:1;stroke:#000;}
-.s3{fill:#fc6b03;stroke-width:1;stroke:#000;}
-.s4{fill:none;stroke-width:5;stroke:#000;}

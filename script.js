@@ -92,7 +92,7 @@ function namer(a) {
 		  break;
 		case "nord":
 		  name = "Nordwalder";
-		  description = "Lorem Ipsum";
+		  description = "Welcome to the forest. Home of the Ents. The Ents guard and preserve the forests. Do not upset them, for they are the fiercest of warriors. The Roar of the Ents has naught echoed off the northerly mountain ranges of the Wäld in ages, yet, in the past 20 some years since the battle of Fools, it has been heard 6 times. The Ents do everything in their power to heal the damage war has brought upon the forests of Nordwälder including eradicating the invasive species cannabis sativa planted by Orangered forces to sate their discontent.";
 		  subreddit = "Nordwalder";
 		  break;
 		case "chrome":
@@ -332,15 +332,15 @@ function landOwnership() {
 			conditional = owner.match(name + "  Periwinkle");
 			if (conditional == name + "  Periwinkle") {
 				faction = "Periwinkle";
-				$(child).attr('class','periwinkle');
+				$(child).attr('class','s1');
 			} else {
 				conditional = owner.match(name + "  Neutral");
 				if (conditional == name + "  Neutral") {
 					faction = "Neutral";
-					$(child).attr('class','neutral');
+					$(child).attr('class','s2');
 				} else {
 					faction = "Orangered";
-					$(child).attr('class','orangered');
+					$(child).attr('class','s3');
 				};
 			}
 			
