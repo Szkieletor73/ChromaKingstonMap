@@ -199,8 +199,8 @@ function namer(a) {
 		  description = "The island of Anglona is relatively uninhabited. With the exception of a few small towns and cities to the south, the land's huge savannahs take up most of it’s area. Anglona’s strategic position and largely flat landscape makes it a prime location for air bases, and is expected to be a vital target in any war between the Orangered and Periwinkle.";
 		  break;
 		case "rpck":
-		  name = "Republika Planina Crna Kamen";
-		  description = "The Republika Planina Crna Kamen (English: Black Stone Mountain Republic) is an advanced independent nation, whose citizens mainly speak Croatian. Though it values its neutrality, the RPCK is willing to ally with other nations against any force they see as a threat to their sovereignty. It has a population of around 4 million people and a small but well-trained military. The main bulk of the RPCK’s population is in the south, where large areas of fertile, tropical farm land exists. The north of the nation is mainly used for larger ranches. Although the RPCK has a relatively small population, it has growing industrial strength and is a key economic power in the region. ";
+		  name = "Republika Planina Crni Kamen";
+		  description = "The Republika Planina Crni Kamen (English: Black Stone Mountain Republic) is an advanced independent nation, whose citizens mainly speak Croatian. Though it values its neutrality, the RPCK is willing to ally with other nations against any force they see as a threat to their sovereignty. It has a population of around 4 million people and a small but well-trained military. The main bulk of the RPCK’s population is in the south, where large areas of fertile, tropical farm land exists. The north of the nation is mainly used for larger ranches. Although the RPCK has a relatively small population, it has growing industrial strength and is a key economic power in the region. ";
 		  break;
 		case "chalkowa":
 		  name = "Chalkowa";
@@ -325,7 +325,7 @@ function landOwnership() {
 			current = $(child).attr('id');
 			namer(current);
 			name = name.toLowerCase();
-			if (name == "republika planina crna kamen") {
+			if (name == "republika planina crni kamen") {
 				name = "rpck";
 			};
 			
@@ -414,24 +414,14 @@ function toggleCustomizer() {
 };
 
 function toggleHelp() {
-	if(i == 1) {
-		$(help).animate({
-			top: '-5000%'
-		});
-		i = 0;
-	}
-	else {
-		$(help).animate({
-			top: '40px'
-		});
-		i = 1;
-	}
+	$(help).fadeToggle('fast', 'linear');
+	$(blackbox).fadeToggle('fast', 'linear');
 }
 
 function showLink() {
 	var sector = $("#sector").val();
 	if (name == "rpck") {
-		name = "republika planina crna kamen";
+		name = "republika planina crni kamen";
 	};
 	if(territoryAlias == "undefined") {}
 	else{
