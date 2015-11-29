@@ -211,7 +211,7 @@ function namer(a) {
 		  description = "The TAI are a multitude of biologically unique islands, species are found on one island only. The Tallian Islands are home to many endemic species, unlike any ever seen in Chroma. The people there are fiercely opposed to all outsiders and despise those who violate their neutrality. They're openly hostile to people from other islands in their own internal alliance. They merely tolerate them in times of war and breached neutrality, following a 'The enemy of my enemy is my friend' mentality. ";
 		  break;
 		case "os":
-		  name = "O'Shaugnessey";
+		  name = "O'Shaughnessey";
 		  description = "Lorem Ipsum";
 		  break;
 		case "terra":
