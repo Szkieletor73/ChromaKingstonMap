@@ -29,10 +29,10 @@ window.onload=function() {
 };
 
 function customize() {
-	var x = document.getElementById("customForm");	
+	var x = document.getElementById("customForm");
 	color = x.elements[0].value;
 	size = x.elements[1].value;
-	
+
 	$('.s5').css('fill', color);
 	$('.s5').css('font-size', size + "px");
 }
@@ -231,7 +231,7 @@ function namer(a) {
 		  description = "Lorem Ipsum";
 		  break;
 		case "redshire":
-		  name = "Red Shire";
+		  name = "Redshire";
 		  description = "Lorem Ipsum";
 		  break;
 		case "winterstar":
@@ -328,7 +328,7 @@ function landOwnership() {
 			if (name == "republika planina crni kamen") {
 				name = "rpck";
 			};
-			
+
 			conditional = owner.match(name + "  Periwinkle");
 			if (conditional == name + "  Periwinkle") {
 				faction = "Periwinkle";
@@ -343,7 +343,7 @@ function landOwnership() {
 					$(child).attr('class','s3');
 				};
 			}
-			
+
 			conditional = owner.match(name + "  " + faction + "  Disputed");
 			if (conditional == name + "  Neutral  Disputed" || conditional == name + "  Periwinkle  Disputed" || conditional == name + "  Orangered  Disputed") {
 				$(child).attr('class','disputed'+faction);
@@ -388,7 +388,7 @@ function toggleNames() {
 		$(elem).find("text").each(function(i,child)
 		  {
 			$(child).fadeToggle('fast', 'linear');
-			
+
 			/*if($(child).attr('class') == 'hidden'){
 					$(child).attr('class','s5');
 					$(document.getElementById('toggleCustomizer')).attr('class','linkContainer floatRight');
@@ -404,7 +404,7 @@ function toggleNames() {
 
 function toggleCustomizer() {
 	$(customizer).fadeToggle('fast', 'linear');
-	
+
 	//if($(customizer).attr('class') == 'hidden'){
 		//$(customizer).attr('class','');
 	/*}
@@ -439,7 +439,7 @@ function display(territory) {
 	territoryAlias = territory;
 	owner = "neutral";
 	namer(territory);
-	
+
 	if(subreddit != "none"){
 		document.getElementById("name").innerHTML = "<a href=http://reddit.com/r/" + subreddit + ">" + name + "</a>";
 		document.getElementById("description").innerHTML = "<span class='hintText'>This territory has a museum subreddit! Click the name to go there.</span><br>" + description;
@@ -448,7 +448,7 @@ function display(territory) {
 		document.getElementById("name").innerHTML = name;
 		document.getElementById("description").innerHTML = description;
 	};
-	
+
 	if(typeof currentId !== 'undefined'){
 		removedClass = currentDisplay.getAttribute('class').replace(new RegExp('(\\s|^)' + 'active' + '(\\s|$)', 'g'), '$2');
 		currentDisplay.setAttribute('class',removedClass);
@@ -456,14 +456,14 @@ function display(territory) {
 	currentId = '#svg2 #layer2 #' + territory;
 	currentDisplay = document.querySelector(currentId);
 	currentDisplay.setAttribute('class',currentDisplay.getAttribute('class') + ' ' + 'active');
-	
+
 	showLink();
-	
+
 	name = name.toLowerCase();
 	if (name == "republika planina crna kamen") {
 		name = "rpck";
 	};
-	
+
 	owner = sidebar;
 	owner = owner.replace(/\bfieldofkarmicglory\b/g, '');
 	owner = owner.replace(/\/r\//g, '');
@@ -483,7 +483,7 @@ function display(territory) {
 			document.getElementById("ownership").innerHTML = "This land is currently under Orangered control.";
 		};
 	}
-	
+
 	conditional = owner.match(name + faction + "  Disputed");
 		if (conditional == name + "  Neutral  Disputed" || conditional == name + "  Periwinkle  Disputed" || conditional == name + "  Orangered  Disputed") {
 			document.getElementById("ownership").innerHTML = document.getElementById("ownership").innerHTML + "<br>Armies are preparing for battle in this land.";
