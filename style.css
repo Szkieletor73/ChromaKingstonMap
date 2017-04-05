@@ -103,7 +103,7 @@ input#sector {
 	position: absolute;
 	top: 30px;
 	left: 550px;
-	
+
 }
 
 #size {
@@ -175,18 +175,23 @@ h1 {
 
 
 @keyframes conflictNeutral {
-    from {fill: #ff4639; color: #ff4639;}
-    to {fill: #787878; color: #787878;}
+    from {
+			fill: #ff4639;
+			color: #ff4639;}
+    to {
+			fill: #787878;
+			color: #787878;}
 }
 
-@keyframes conflictPeriwinkle {
-    from {fill: #ff4639;}
-    to {fill: #907aff;}
+@keyframes conflictCrimson {
+    from {fill: #dc143c;}
+    to {fill: #787878;}
 }
 
-@keyframes conflictOrangered {
-    from {fill: #ff1606;}
-    to {fill: #ff6900;}
+@keyframes conflictEmerald {
+
+    from {fill: #50C878;}
+    to {fill: #ff4639;}
 }
 
 .disputedNeutral{
@@ -194,32 +199,32 @@ h1 {
 	stroke-width: 1;
 	stroke: #000000;
 	animation-name: conflictNeutral;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 	animation-timing-function: ease-in;
 	color: #ff4639;
 }
 
-.disputedPeriwinkle{
-	fill: #ff4639;
+.disputedCrimson{
+	fill: #dc143c;
 	stroke-width: 1;
 	stroke: #000000;
-	animation-name: conflictPeriwinkle;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+	animation-name: conflictCrimson;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 	animation-timing-function: ease-in;
 }
 
-.disputedOrangered{
-	fill: #ff4639;
+.disputedEmerald{
+	fill: #50C878;
 	stroke-width: 1;
 	stroke: #000000;
-	animation-name: conflictOrangered;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+	animation-name: conflictEmerald;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 	animation-timing-function: ease-in;
 }
 
@@ -252,13 +257,13 @@ p {
 .bold {
 	font-weight: bold;
 }
-.s0{fill:#000;stroke-width:0.34;stroke:#000;}
+.s0 {fill:#000;stroke-width:0.34;stroke:#000;}
 
-.s1 { /*periwinkle*/
-	fill: #907aff;
+.s1 { /*crimson*/
+	fill: #dc143c;
 	stroke-width: 1;
 	stroke: #000000;
-	color: #907aff;
+	color: #dc143c;
 }
 
 .s2 { /*neutral*/
@@ -268,11 +273,11 @@ p {
 	color: #787878;
 }
 
-.s3 { /*orangered*/
-	fill: #ff6900;
+.s3 { /*emerald*/
+	fill: #50C878;
 	stroke-width: 1;
 	stroke: #000000;
-	color: #ff6900;
+	color: #50C878;
 }
 
 .s4{fill:none;stroke-width:5;stroke:#000;} /*connections*/
