@@ -1,3 +1,7 @@
+html {
+	background-color: #312c29;
+}
+
 body {
 	margin: auto;
 }
@@ -97,10 +101,11 @@ input#sector {
 	transition: 0.3s background;
 }
 
-#layer2 path:hover {
-	stroke-width: 3;
+#layer1 path:hover, #layer2 path:hover, #layer9 path:hover {
+	stroke-width: 3!important;
 	transition: 0.3s stroke-width;
 	cursor: pointer;
+	z-index: 100;
 }
 
 #customizer {
@@ -268,6 +273,7 @@ p {
 	stroke-width: 1;
 	stroke: #000000;
 	color: #dc143c;
+	z-index: 1;
 }
 
 .s2 { /*neutral*/
@@ -275,6 +281,7 @@ p {
 	stroke-width: 1;
 	stroke: #000000;
 	color: #787878;
+	z-index: 1;
 }
 
 .s3 { /*emerald*/
@@ -282,12 +289,13 @@ p {
 	stroke-width: 1;
 	stroke: #000000;
 	color: #50C878;
+	z-index: 1;
 }
 
 .s4{fill:none;stroke-width:5;stroke:#000;} /*connections*/
 
 .s5 { /*land text*/
-	fill: #000;
+	fill: #fff;
 	font-family: TrebuchetMS;
 	font-size:12px;
 	line-height:100;

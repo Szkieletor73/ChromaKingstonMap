@@ -6,6 +6,7 @@ window.onload=function() {
 	$(sendTroops).hide();
 	$(customizer).hide();
 	toggleConnections();
+	toggleCities();
 
 	//grab chromabot as json object, from bot's data
 	chromabot = (function () {
@@ -32,25 +33,11 @@ function customize() {
 	size = x.elements[1].value;
 
 	$('.s5').css('fill', color);
-	$('.s5').css('font-size', size + "px");
+	//$('.s5').css('font-size', size + "px");
 }
 
-
-function toggleDebris() {
-	$("#layer3").each(function(i,elem)
-	{
-		$(elem).find("path").each(function(i,child)
-		  {
-			if($(child).attr('class') == 'hidden'){
-				$(child).attr('class','s0');
-				}
-				else{$(child).attr('class','hidden');}
-		  });
-	});
-};
-
 function toggleConnections() {
-	$("#layer1").each(function(i,elem)
+	$("#layer5").each(function(i,elem)
 	{
 		$(elem).find("path").each(function(i,child)
 		  {
@@ -62,13 +49,34 @@ function toggleConnections() {
 	});
 }
 
+function toggleCities() {
+	$("#layer11").each(function(i,elem)
+	{
+		$(elem).find("path").each(function(i,child)
+		  {
+			if($(child).attr('class') == 'hidden'){
+				$(child).attr('class','');
+				}
+				else{$(child).attr('class','hidden');}
+		  });
+		 $(elem).find("circle").each(function(i,child)
+		  {
+			if($(child).attr('class') == 'hidden'){
+				$(child).attr('class','');
+				}
+				else{$(child).attr('class','hidden');}
+		  });
+	});
+} 
+
 function toggleNames() {
 	$("#layer4").each(function(i,elem)
 	{
-		if($(customizer).is(":visible")) {
+		/* if($(customizer).is(":visible")) {
 			$(customizer).fadeToggle('fast', 'linear');
 		}
-		$(document.getElementById('toggleCustomizer')).fadeToggle('fast', 'linear');
+		$(document.getElementById('toggleCustomizer')).fadeToggle('fast', 'linear'); */
+		
 		$(elem).find("text").each(function(i,child)
 		  {
 			$(child).fadeToggle('fast', 'linear');
@@ -88,7 +96,7 @@ function toggleHelp() {
 function initializeTerritories() {
 	var ownershipColor;
 	$.each(chromabot.regions, function(key, value){
-		//alert(value.name);
+		console.log(value.name);
 		if(value.owner == 0){
 			ownershipColor = 's1'; //crimson
 			if(value.battle != "none"){ownershipColor += " disputedCrimson"} //battle tint
@@ -102,18 +110,18 @@ function initializeTerritories() {
 			if(value.battle != "none"){ownershipColor += " disputedNeutral"} //battle tint
 		}} //neutral
 
-
+		console.log(key);
 		document.getElementById(key).setAttribute('class', /*document.getElementById(key).getAttribute('class') + */ownershipColor);
 	});
 }
 
-function showLink(territory, owner, battle) {
+function showLink(territory, travelAlias, owner, battle) {
 	var sector = $("#sector").val();
 	if (sector == 0) {
-		document.getElementById("links").innerHTML = "<a href='http://www.reddit.com/message/compose/?to=chromabot&subject=Press%20Send%20to%20execute%20the%20command&message=lead%20all%20to%20*," + territory + "'>Click to send your troops to <span class='capitals'>" + territory + "</span>!</a>";
+		document.getElementById("links").innerHTML = "<a href='http://www.reddit.com/message/compose/?to=chromabot&subject=Press%20Send%20to%20execute%20the%20command&message=lead%20all%20to%20*," + travelAlias + "'>Click to send your troops to <span class='capitals'>" + territory + "</span>!</a>";
 		}
 		else {
-		document.getElementById("links").innerHTML = "<a href='http://www.reddit.com/message/compose/?to=chromabot&subject=Press%20Send%20to%20execute%20the%20command&message=lead%20all%20to%20*," + territory + "%23" + sector + "'>Click to send your troops to <span class='capitals'>" + territory + "</span>!</a>";
+		document.getElementById("links").innerHTML = "<a href='http://www.reddit.com/message/compose/?to=chromabot&subject=Press%20Send%20to%20execute%20the%20command&message=lead%20all%20to%20*," + travelAlias + "%23" + sector + "'>Click to send your troops to <span class='capitals'>" + territory + "</span>!</a>";
 		}
 	if(owner == "0"){
 		owner = "Crimson";
@@ -127,9 +135,9 @@ function showLink(territory, owner, battle) {
 	}
 }
 
-function display(territory) {
+function display(territory, travelAlias) {
 	$(sendTroops).show();
 	var current = chromabot.regions[territory];
-	showLink(current.name, current.owner, current.battle);
-	document.getElementById("sector").setAttribute("onChange", "showLink('"+ current.name + ", " + current.owner + ", " + current.battle + "')");
+	showLink(current.name, travelAlias, current.owner, current.battle);
+	document.getElementById("sector").setAttribute("onChange", "showLink('" + current.name + ", "+ travelAlias + ", " + current.owner + ", " + current.battle + "')");
 };
